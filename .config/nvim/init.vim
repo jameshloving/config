@@ -31,3 +31,4 @@ set incsearch           " Incremental search.
 
 set cul                 " highlight current line
 
+set mouse=a             " enable mouse scrolling/etc.
