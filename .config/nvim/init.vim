@@ -1,6 +1,3 @@
-color molokai           " set colorscheme to Molokai
-                        " from: https://raw.githubusercontent.com/tomasr/molokai/master/colors/molokai.vim
-                        " to: /usr/share/nvim/runtime/colors/
 set t_Co=256            " enable 256-color display 
 
 set encoding=utf-8      " set encoding to UTF-8 standard
@@ -29,6 +26,6 @@ set ignorecase          " Make searching case insensitive
 set smartcase           " ... unless the query has capital letters.
 set incsearch           " Incremental search.
 
-set cul                 " highlight current line
-
 set mouse=a             " enable mouse scrolling/etc.
+
+set foldmethod=indent   " enable folding of blocks of code
