@@ -21,10 +21,11 @@ fi
 # configure vim/neovim
 if [ `which nvim` ]
 then
-    cp init.vim ~/.vimrc
-    mv init.vim ~/.config/nvim/init.vim
+    cp .vimrc ~
+    cp .vimrc ~/.config/nvim/init.vim
     echo '\n#neovim aliases' >> ~/.bashrc
     echo "alias vim='nvim'" >> ~/.bashrc
     echo "alias vi='nvim'" >> ~/.bashrc
 else
-    mv init.vim ~/.vimrc
+    cp .vimrc ~/.vimrc
+fi
