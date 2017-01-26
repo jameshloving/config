@@ -30,3 +30,10 @@ then
 else
     cp .vimrc ~/.vimrc
 fi
+
+# configure git
+if [ `which git` ]
+then
+    git config --global user.name "jameshloving"
+    git config --global user.email "jameshloving@gmail.com"
+fi
