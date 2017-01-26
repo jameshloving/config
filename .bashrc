@@ -105,7 +105,8 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 # ~/.bash_aliases, instead of adding them here directly.
 # See /usr/share/doc/bash-doc/examples in the bash-doc package.
 
-if [ -f ~/.bash_aliases ]; then
+if [ -f ~/.bash_aliases ]
+then
     . ~/.bash_aliases
 fi
 
@@ -113,7 +114,8 @@ fi
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
 # sources /etc/bash.bashrc).
 if ! shopt -oq posix; then
-  if [ -f /usr/share/bash-completion/bash_completion ]; then
+  if [ -f /usr/share/bash-completion/bash_completion ]
+  then
     . /usr/share/bash-completion/bash_completion
   elif [ -f /etc/bash_completion ]; then
     . /etc/bash_completion
@@ -130,8 +132,13 @@ fi
 
 # to start SSH sessions in TMUX
 ssh () {
-    if command ssh "$@" which tmux;  then
+    if command ssh "$@" which tmux
+    then
+        DESTUSER=$(command ssh $@ 'echo `whoami`'|head -n 1|awk '{print $1;}')
+        DESTHOST=$(command ssh $@ 'echo `hostname`'|head -n 1|awk '{print $1;}')
+        tmux rename-window "$DESTUSER@$DESTHOST"
         command ssh -t "$@" tmux new -s main -A
+        tmux set-window-option automatic-rename "on" 1>/dev/null
     else
         command ssh "$@"
     fi
