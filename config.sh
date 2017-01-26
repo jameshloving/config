@@ -23,7 +23,8 @@ if [ `which nvim` ]
 then
     cp .vimrc ~
     cp .vimrc ~/.config/nvim/init.vim
-    echo '\n#neovim aliases' >> ~/.bashrc
+    echo '' >> ~/.bashrc
+    echo '#neovim aliases' >> ~/.bashrc
     echo "alias vim='nvim'" >> ~/.bashrc
     echo "alias vi='nvim'" >> ~/.bashrc
 else
