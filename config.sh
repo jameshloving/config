@@ -9,10 +9,12 @@ cp .tmux.conf ~
 TMUX_VERSION=`tmux -V|awk '{print $2;}'`
 if [ `echo $TMUX_VERSION'>='2.1 | bc` -gt 0 ]
 then
-    echo '\n#enable mouse scrolling' >> ~/.tmux.conf
+    echo '' >> ~/.tmux.conf
+    echo '#enable mouse scrolling' >> ~/.tmux.conf
     echo 'set -g mouse on' >> ~/.tmux.conf
 else
-    echo '\n#enable mouse scrolling' >> ~/.tmux.conf
+    echo '' >> ~/.tmux.conf
+    echo '#enable mouse scrolling' >> ~/.tmux.conf
     echo 'set -g mode-mouse on' >> ~/.tmux.conf
 fi
 
@@ -21,7 +23,8 @@ if [ `which nvim` ]
 then
     cp .vimrc ~
     cp .vimrc ~/.config/nvim/init.vim
-    echo '\n#neovim aliases' >> ~/.bashrc
+    echo '' >> ~/.bashrc
+    echo '#neovim aliases' >> ~/.bashrc
     echo "alias vim='nvim'" >> ~/.bashrc
     echo "alias vi='nvim'" >> ~/.bashrc
 else
