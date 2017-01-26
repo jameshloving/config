@@ -141,3 +141,7 @@ ssh () {
 }
 
 export TERM=xterm-256color
+
+#neovim aliases
+alias vim='nvim'
+alias vi='nvim'
