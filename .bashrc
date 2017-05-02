@@ -118,9 +118,6 @@ if ! shopt -oq posix; then
   fi
 fi
 
-# added by Anaconda3 4.0.0 installer
-export PATH="/home/jloving/anaconda3/bin:$PATH"
-
 # to start all terminals in TMUX
 if [ -z "$TMUX" ]; then
   tmux
