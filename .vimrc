@@ -36,7 +36,3 @@ set foldmethod=indent    " enable folding of blocks of code
 " history configuration
 set history=1000
 set undolevels=1000
-
-" vimrc configuration
-command ev e $MYVIMRC    " edit current vimrc
-command sv so $MYVIMRC   " source current vimrc
